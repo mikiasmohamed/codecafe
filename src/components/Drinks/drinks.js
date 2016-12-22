@@ -96,10 +96,17 @@ export default Vue.extend({
       if (this.total > 0) {
         this.purchased = true;
         this.notify = this.message + '; your total is $' + this.total + '.';
-        this.total = 0;
         _.each(this.drinks, function(drink) {
           drink.checked = false;
           drink.quantity = 0;
+        });
+        _.each(this.modifiers, function(modifier) {
+          modifier.checked = false;
+          modifier.quantity = 0;
+        });
+        _.each(this.components, function(component) {
+          component.checked = false;
+          component.quantity = 0;
         });
       }
     }
