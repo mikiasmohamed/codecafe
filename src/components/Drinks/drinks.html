@@ -1,0 +1,118 @@
+<div class="drinks">
+  <div class="row">
+    <div class="col-md-9">
+      <div class="components-toggle">
+        <button type="button" class="btn btn-primary" v-on:click="toggleComponents">Toggle Components</button>
+      </div>
+      <div v-if="componentsSection" class="components-section">
+        <div class="col-xs-10 text-center">
+          <h2 class="text-center">Components</h2>
+        </div>
+        <div class="text-center">
+          <label for="components-filter"></label>
+          <input type="text" class="form-control" id="components-filter" v-model="componentSearch" placeholder="Search a component">
+        </div>
+        <table class="table">
+          <thead>
+            <th>Name</th>
+            <th>Quantity</th>
+            <th>Price</th>
+            <th>Buy</th>
+          </thead>
+          <tbody>
+            <tr v-for="(component, index) in filterBy(components, componentSearch)">
+              <td>{{component.name}}</td>
+              <td>
+                <input v-model.number="component.quantity" type="number" min="0" />
+              </td>
+              <td>{{component.price}}</td>
+              <td>
+                <input type="checkbox" v-bind:value="{id: component.id}" v-model="component.checked">
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="modifiers-toggle">
+        <button type="button" class="btn btn-primary" v-on:click="toggleModifiers">Toggle Modifiers</button>
+      </div>
+      <div v-if="modifiersSection" class="modifiers-section">
+        <div class="col-xs-10 text-center">
+          <h2 class="text-center">Modifiers</h2>
+        </div>
+        <div class="text-center">
+          <label for="modifier-filter"></label>
+          <input type="text" class="form-control" id="modifier-filter" v-model="modifierSearch" placeholder="Search a modifier">
+        </div>
+        <table class="table">
+          <thead>
+            <th>Name</th>
+            <th>Quantity</th>
+            <th>Price</th>
+            <th>Buy</th>
+          </thead>
+          <tbody>
+            <tr v-for="(modifier, index) in filterBy(modifiers, modifierSearch)">
+              <td>{{modifier.name}}</td>
+              <td>
+                <input v-model.number="modifier.quantity" type="number" min="0" />
+              </td>
+              <td>{{modifier.price}}</td>
+              <td>
+                <input type="checkbox" v-bind:value="{id: modifier.id}" v-model="modifier.checked">
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="drinks-section">
+        <h2 class="text-center">Drinks</h2>
+        <div class="text-center">
+          <label for="drink-filter"></label>
+          <input type="text" class="form-control" id="drink-filter" v-model="drinkSearch" placeholder="Search a drink">
+        </div>
+        <div>
+          <table class="table">
+            <thead>
+              <th>Name</th>
+              <th>Quantity</th>
+              <th>Price</th>
+              <th>Buy</th>
+            </thead>
+            <tbody>
+              <tr v-for="(drink, index) in filterBy(drinks, drinkSearch)">
+                <td>{{drink.name}}</td>
+                <td>
+                  <input v-model.number="drink.quantity" type="number" min="0" />
+                </td>
+                <td>{{drink.price}}</td>
+                <td>
+                  <input type="checkbox" v-bind:value="{id: drink.id}" v-model="drink.checked">
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-3">
+      <div class="row purchase-section">
+        <div class="col-sm-6">
+          <div class="col-xs-12">
+            Total: {{total.toFixed(2)}}
+          </div>
+        </div>
+        <div class="col-sm-4">
+          <form class="form" name="myForm">
+            <button type="button" class="btn btn-primary" v-on:click="purchase">Purchase</button>
+          </form>
+        </div>
+      </div>
+      <div class="row purchase-message" v-if="purchased">
+        <div class="col-xs-10">
+          <p class="text-center">{{notify}}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,57 @@
+.drinks {
+  margin: 1em;
+  bottom: 2em;
+
+  table {
+    td {
+      min-width: 6em;
+    }
+  }
+
+  input[type="number"] {
+    width: 3em;
+  }
+
+  .components-toggle {
+    position: relative;
+    top: 2em;
+    bottom: 2em;
+  }
+
+  .modifiers-toggle {
+    position: relative;
+    top: 4em;
+    bottom: 2em;
+  }
+
+  .purchase-section {
+    position: relative;
+    margin-top: 4em;
+  }
+
+  .purchase-message {
+    margin-top: 4em;
+    padding: 1em 0;
+    background: #1b926c;
+    color: #f0f0f0;
+    margin-left: 1em;
+  }
+
+ .components-section {
+    position: relative;
+    top: 4em;
+    bottom: 2em;
+  }
+
+ .modifiers-section {
+    position: relative;
+    top: 6em;
+    bottom: 2em;
+  }
+
+ .drinks-section {
+    position: relative;
+    top: 6em;
+    bottom: 2em;
+  }
+}
