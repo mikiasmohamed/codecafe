@@ -23,7 +23,7 @@
     "build": "webpack -p --config webpack/production.js",
     "lint:js": "./node_modules/.bin/eslint src; exit 0;",
     "postinstall": "webpack --config ./webpack-prod.config.js --progress --colors",
-    "start": "node server.js"
+    "start": "webpack-dev-server --inline --progress --colors --history-api-fallback --config webpack/development.js"
   },
   "dependencies": {
     "bootstrap": "^4.0.0-alpha.5",

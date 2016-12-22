@@ -1,57 +1,67 @@
+//colors
+$color_fun_green_approx: #006341;
+$color_gallery_approx: #f0f0f0;
+$color_eucalyptus_approx: #1b926c;
+
 .drinks {
-  margin: 1em;
-  bottom: 2em;
-
-  table {
-    td {
-      min-width: 6em;
-    }
+	margin: 1em;
+	bottom: 2em;
+	h2 {
+		color: $color_fun_green_approx;
+	}
+	input[type="number"] {
+		width: 3em;
+	}
+	.components-toggle {
+		position: relative;
+		top: 2em;
+		bottom: 2em;
+		.btn-component {
+			width: 100%;
+			background-color: $color_fun_green_approx;
+			color: $color_gallery_approx;
+		}
+	}
+	.modifiers-toggle {
+		position: relative;
+		top: 4em;
+		bottom: 2em;
+		.btn-modifier {
+			width: 100%;
+			background-color: $color_fun_green_approx;
+			color: $color_gallery_approx;
+		}
+	}
+	.purchase-section {
+		position: relative;
+		margin-top: 4em;
+		.btn-purchase {
+			background-color: $color_fun_green_approx;
+			color: $color_gallery_approx;
+		}
+	}
+	.purchase-message {
+		margin-top: 4em;
+		padding: 1em 0;
+		background: $color_eucalyptus_approx;
+		color: $color_gallery_approx;
+		margin-left: 1em;
+	}
+  %extend_1 {
+  	position: relative;
+  	top: 5em;
+  	bottom: 2em;
   }
-
-  input[type="number"] {
-    width: 3em;
+  .components-section {
+  	@extend %extend_1;
   }
-
-  .components-toggle {
-    position: relative;
-    top: 2em;
-    bottom: 2em;
+  .modifiers-section {
+  	@extend %extend_1;
   }
-
-  .modifiers-toggle {
-    position: relative;
-    top: 4em;
-    bottom: 2em;
+  .drinks-section {
+  	@extend %extend_1;
   }
-
-  .purchase-section {
-    position: relative;
-    margin-top: 4em;
-  }
-
-  .purchase-message {
-    margin-top: 4em;
-    padding: 1em 0;
-    background: #1b926c;
-    color: #f0f0f0;
-    margin-left: 1em;
-  }
-
- .components-section {
-    position: relative;
-    top: 4em;
-    bottom: 2em;
-  }
-
- .modifiers-section {
-    position: relative;
-    top: 6em;
-    bottom: 2em;
-  }
-
- .drinks-section {
-    position: relative;
-    top: 6em;
-    bottom: 2em;
-  }
+	table td {
+		min-width: 6em;
+	}
 }

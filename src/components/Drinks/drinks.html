@@ -2,7 +2,8 @@
   <div class="row">
     <div class="col-md-9">
       <div class="components-toggle">
-        <button type="button" class="btn btn-primary" v-on:click="toggleComponents">Toggle Components</button>
+        <button type="button" class="btn btn-default btn-component" v-if="!this.componentsSection" v-on:click="toggleComponents">Show Comoponts</button>
+        <button type="button" class="btn btn-default btn-component" v-if="this.componentsSection" v-on:click="toggleComponents">Hide Comoponts</button>
       </div>
       <div v-if="componentsSection" class="components-section">
         <div class="col-xs-10 text-center">
@@ -23,18 +24,19 @@
             <tr v-for="(component, index) in filterBy(components, componentSearch)">
               <td>{{component.name}}</td>
               <td>
-                <input v-model.number="component.quantity" type="number" min="0" />
+                <input v-model.number="component.quantity" class="form-control" type="number" min="0" />
               </td>
               <td>{{component.price}}</td>
               <td>
-                <input type="checkbox" v-bind:value="{id: component.id}" v-model="component.checked">
+                <input type="checkbox" v-bind:value="{id: component.id}" class="form-control" v-model="component.checked">
               </td>
             </tr>
           </tbody>
         </table>
       </div>
       <div class="modifiers-toggle">
-        <button type="button" class="btn btn-primary" v-on:click="toggleModifiers">Toggle Modifiers</button>
+        <button type="button" class="btn btn-default btn-modifier" v-if="!modifiersSection" v-on:click="toggleModifiers">Show Modifiers</button>
+        <button type="button" class="btn btn-default btn-modifier" v-if="modifiersSection" v-on:click="toggleModifiers">Hide Modifiers</button>
       </div>
       <div v-if="modifiersSection" class="modifiers-section">
         <div class="col-xs-10 text-center">
@@ -55,11 +57,11 @@
             <tr v-for="(modifier, index) in filterBy(modifiers, modifierSearch)">
               <td>{{modifier.name}}</td>
               <td>
-                <input v-model.number="modifier.quantity" type="number" min="0" />
+                <input v-model.number="modifier.quantity" class="form-control" type="number" min="0" />
               </td>
               <td>{{modifier.price}}</td>
               <td>
-                <input type="checkbox" v-bind:value="{id: modifier.id}" v-model="modifier.checked">
+                <input type="checkbox" v-bind:value="{id: modifier.id}" class="form-control" v-model="modifier.checked">
               </td>
             </tr>
           </tbody>
@@ -83,11 +85,11 @@
               <tr v-for="(drink, index) in filterBy(drinks, drinkSearch)">
                 <td>{{drink.name}}</td>
                 <td>
-                  <input v-model.number="drink.quantity" type="number" min="0" />
+                  <input v-model.number="drink.quantity" class="form-control" type="number" min="0" />
                 </td>
                 <td>{{drink.price}}</td>
                 <td>
-                  <input type="checkbox" v-bind:value="{id: drink.id}" v-model="drink.checked">
+                  <input type="checkbox" v-bind:value="{id: drink.id}" class="form-control" v-model="drink.checked">
                 </td>
               </tr>
             </tbody>
@@ -104,7 +106,7 @@
         </div>
         <div class="col-sm-4">
           <form class="form" name="myForm">
-            <button type="button" class="btn btn-primary" v-on:click="purchase">Purchase</button>
+            <button type="button" class="btn btn-default btn-purchase" v-on:click="purchase">Purchase</button>
           </form>
         </div>
       </div>

@@ -14,7 +14,6 @@ Vue.use(Vue2Filters);
 
 export default Vue.extend({
   template,
-  name: 'bootstrap-modal',
   data() {
     return {
       drinks: [],
@@ -96,7 +95,7 @@ export default Vue.extend({
       event.preventDefault();
       if (this.total > 0) {
         this.purchased = true;
-        this.notify = this.message + ', it was $' + this.total;
+        this.notify = this.message + '; your total is $' + this.total + '.';
         this.total = 0;
         _.each(this.drinks, function(drink) {
           drink.checked = false;
