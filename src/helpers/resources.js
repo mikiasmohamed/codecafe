@@ -2,7 +2,7 @@ import Vue from 'vue';
 import VueResource from 'vue-resource';
 import { router } from 'src/main';
 
-const API_BASE = 'http://www.mocky.io/v2/585b23350f0000892216190f';
+const API_BASE = 'https://www.mocky.io/v2/585b23350f0000892216190f';
 Vue.use(VueResource);
 
 Vue.http.options = {
