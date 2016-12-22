@@ -6,6 +6,8 @@ var WebpackCleanupPlugin = require('webpack-cleanup-plugin');
 
 var webpackBase = require('./webpack.base.js');
 
+webpackBase.output.publicPath = '/codecafe';
+
 module.exports = merge(webpackBase, {
   plugins: [
     new webpack.DefinePlugin({
