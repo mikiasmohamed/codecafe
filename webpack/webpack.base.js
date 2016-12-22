@@ -13,6 +13,7 @@ module.exports = {
     filename: '[name].[hash].js',
     sourceMapFilename: '[name].[hash].js.map',
     chunkFilename: '[id].chunk.js',
+    publicPath: '/codecafe/'
   },
 
   resolve: {

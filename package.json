@@ -24,7 +24,7 @@
     "lint:js": "./node_modules/.bin/eslint src; exit 0;",
     "postinstall": "webpack --config ./webpack-prod.config.js --progress --colors",
     "start": "webpack-dev-server --inline --progress --colors --history-api-fallback --config webpack/development.js",
-    "deploy": "node_modules/gh-pages/bin/gh-pages -d build"
+    "deploy": "gh-pages -d build"
   },
   "dependencies": {
     "bootstrap": "^4.0.0-alpha.5",
@@ -61,6 +61,7 @@
     "eslint-plugin-import": "^1.10.2",
     "exports-loader": "^0.6.3",
     "file-loader": "^0.9.0",
+    "gh-pages": "^0.12.0",
     "html-webpack-plugin": "^2.22.0",
     "imports-loader": "^0.6.5",
     "node-sass": "^3.8.0",
