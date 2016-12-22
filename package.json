@@ -17,6 +17,7 @@
     "port": 3000
   },
   "scripts": {
+    "heroku-postbuild": "webpack -p --config ./webpack.prod.config.js --progress",
     "start": "webpack-dev-server --inline --progress --colors --history-api-fallback --config webpack/development.js",
     "build": "webpack -p --config webpack/production.js",
     "lint:js": "./node_modules/.bin/eslint src; exit 0;"
@@ -30,7 +31,8 @@
     "vue-resource": "^1.0.3",
     "vue-router": "^2.0.1",
     "vue-strap": "^1.1.34",
-    "vue2-bootstrap-modal": "^0.1.1"
+    "vue2-bootstrap-modal": "^0.1.1",
+    "vue2-filters": "^0.1.4"
   },
   "devDependencies": {
     "autoprefixer": "^6.3.7",
