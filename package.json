@@ -19,8 +19,7 @@
   "scripts": {
     "start": "webpack-dev-server --inline --progress --colors --history-api-fallback --config webpack/development.js",
     "build": "webpack -p --config webpack/production.js",
-    "lint:js": "./node_modules/.bin/eslint src; exit 0;",
-    "postinstall": "npm install express"
+    "lint:js": "./node_modules/.bin/eslint src; exit 0;"
   },
   "dependencies": {
     "bootstrap": "^4.0.0-alpha.5",
