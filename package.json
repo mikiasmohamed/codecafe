@@ -20,10 +20,9 @@
     "port": 3000
   },
   "scripts": {
-    "heroku-postbuild": "webpack -p --config ./webpack.prod.config.js --progress",
     "build": "webpack -p --config webpack/production.js",
     "lint:js": "./node_modules/.bin/eslint src; exit 0;",
-    "postinstall": "npm run build",
+    "postinstall": "webpack --config ./webpack-prod.config.js --progress --colors",
     "start": "node server.js"
   },
   "dependencies": {
